@@ -7,8 +7,15 @@ import '../themes/app_colors.dart';
 class PrimaryButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
+  final Color backgroundColor;
+  final Color textColor;
 
-  const PrimaryButton({Key? key, required this.title, required this.onTap})
+  const PrimaryButton(
+      {Key? key,
+      required this.title,
+      required this.onTap,
+      this.backgroundColor = AppColors.mainColor,
+      this.textColor = const Color(0xFFFFFFFF)})
       : super(key: key);
 
   @override
@@ -20,11 +27,11 @@ class PrimaryButton extends StatelessWidget {
         alignment: Alignment.center,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: AppColors.mainColor),
+            borderRadius: BorderRadius.circular(8), color: backgroundColor),
         child: Text(
           title,
-          style: AppTextStyles.plusJakartaSans
-              .copyWith(fontWeight: FontWeight.w400, fontSize: 16.sp,color: AppColors.primaryWhite),
+          style: AppTextStyles.plusJakartaSans.copyWith(
+              fontWeight: FontWeight.w400, fontSize: 16.sp, color: textColor),
         ),
       ),
     );

@@ -2,18 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:taptoparty/screens/vendor_dashboard/vendor_registration.dart';
-import 'package:taptoparty/views/auth_screen/signup_screen.dart';
+import 'package:taptoparty/views/auth_screen/bussniss_owner_registeration/bussniss_owner_registeration.dart.dart';
+import 'package:taptoparty/views/auth_screen/create_an_account.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/vendor_home_dashboard.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
-import '../../themes/app_colors.dart';
 import '../../themes/app_textstyles.dart';
 import '../../utils/navigation.dart';
 import '../../widget/custom_input.dart';
 import 'Forgot_pasword.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool remember = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +39,22 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40.h),
+              SizedBox(height: 10.h),
+              Row(
+                children: [
+                  Expanded(child: PrimaryButton(title: "User", onTap: () {})),
+                  SizedBox(width: 20.w),
+                  Expanded(
+                      child: PrimaryButton(
+                          title: "Service Provider",
+                          onTap: () {
+                            navigateToPage(
+                                context: context,
+                                pageName: BusinessOwnerRegistrationScreen());
+                          })),
+                ],
+              ),
+              SizedBox(height: 10.h),
               Text(
                 "Use the form below to access your account.",
                 textAlign: TextAlign.center,
@@ -62,8 +84,40 @@ class LoginScreen extends StatelessWidget {
                 hintText: "Password",
               ),
               SizedBox(height: 20.h),
+              PrimaryButton(
+                  title: "Login",
+                  onTap: () {
+                    navigateToPage(
+                        context: context,
+                        pageName: VendorHomeDashboardScreen());
+                  }),
+              SizedBox(height: 20.h),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: 25,
+                        width: 25,
+                        child: Checkbox(
+                            value: remember,
+                            onChanged: (v) {
+                              setState(() {
+                                remember = v!;
+                              });
+                            }),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "Remember me ",
+                        style: AppTextStyles.plusJakartaSans.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+                    ],
+                  ),
                   TextButton(
                     onPressed: () {
                       navigateToPage(
@@ -75,55 +129,36 @@ class LoginScreen extends StatelessWidget {
                           fontWeight: FontWeight.w200, fontSize: 12.sp),
                     ),
                   ),
-                  SizedBox(width: 40.w),
-                  Expanded(
-                      child: PrimaryButton(
-                          title: "Login",
-                          onTap: () {
-                            navigateToPage(
-                                context: context,
-                                pageName: VendorRegistration());
-                          })),
                 ],
               ),
-              SizedBox(height: 20.h),
-              Center(
-                child: Text(
-                  "Use a social platform to continue",
-                  style: AppTextStyles.plusJakartaSans,
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.only(left: 30),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.grey.shade300,
                 ),
-              ),
-              SizedBox(height: 20.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                      radius: 25,
-                      backgroundColor: AppColors.socialButtonColor,
-                      child: SvgPicture.asset("images/googleICon.svg")),
-                  SizedBox(width: 10.w),
-                  CircleAvatar(
-                      radius: 25,
-                      backgroundColor: AppColors.socialButtonColor,
-                      child: FaIcon(
-                        FontAwesomeIcons.facebook,
-                        color: Colors.blue.shade700,
-                      )),
-                  SizedBox(width: 10.w),
-                  CircleAvatar(
-                      radius: 25,
-                      backgroundColor: AppColors.socialButtonColor,
-                      child: FaIcon(
-                        FontAwesomeIcons.linkedin,
-                        color: Colors.blue.shade700,
-                      )),
-                ],
+                child: Row(
+                  children: [
+                    Text(
+                      "Or Sign in with  ",
+                      style: AppTextStyles.plusJakartaSans,
+                    ),
+                    Spacer(),
+                    SvgPicture.asset("images/googleICon.svg"),
+                    SizedBox(width: 10.w),
+                    FaIcon(
+                      FontAwesomeIcons.facebook,
+                      color: Colors.blue.shade700,
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
               GestureDetector(
                 onTap: () {
                   navigateToPage(
-                      context: context, pageName: const SignUpScreen());
+                      context: context, pageName: const CreateAnAccount());
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +168,7 @@ class LoginScreen extends StatelessWidget {
                       style: AppTextStyles.plusJakartaSans,
                     ),
                     Text(
-                      "SignUp",
+                      "Create Account",
                       style: AppTextStyles.plusJakartaSans
                           .copyWith(fontWeight: FontWeight.bold),
                     ),

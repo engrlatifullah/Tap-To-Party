@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:taptoparty/screens/vendor_dashboard/vendor_registration.dart';
+import 'package:taptoparty/views/auth_screen/bussniss_owner_registeration/bussniss_owner_registeration.dart.dart';
 import 'package:taptoparty/views/auth_screen/widget/otp_field.dart';
 
 import '../../themes/app_textstyles.dart';
@@ -64,7 +64,7 @@ class OtpScreen extends StatelessWidget {
                       onTap: () {
                         navigateToPage(
                           context: context,
-                          pageName: VendorRegistration(),
+                          pageName: BusinessOwnerRegistrationScreen(),
                         );
                       })),
             )

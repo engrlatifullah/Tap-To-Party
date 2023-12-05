@@ -6,16 +6,19 @@ import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
-import '../../widget/custom_input.dart';
+import '../../../widget/custom_input.dart';
+import '../login_screen.dart';
 
-class VendorRegistration extends StatefulWidget {
-  const VendorRegistration({super.key});
+class BusinessOwnerRegistrationScreen extends StatefulWidget {
+  const BusinessOwnerRegistrationScreen({super.key});
 
   @override
-  State<VendorRegistration> createState() => _VendorRegistrationState();
+  State<BusinessOwnerRegistrationScreen> createState() =>
+      _BusinessOwnerRegistrationScreenState();
 }
 
-class _VendorRegistrationState extends State<VendorRegistration> {
+class _BusinessOwnerRegistrationScreenState
+    extends State<BusinessOwnerRegistrationScreen> {
   final List<String> items = [
     "caterer",
     "florist",
@@ -36,6 +39,27 @@ class _VendorRegistrationState extends State<VendorRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leadingWidth: 90,
+        leading: Row(
+          children: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.navigate_before,
+                  color: Colors.black,
+                )),
+            Icon(
+              Icons.menu,
+              color: Colors.black,
+            )
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -93,12 +117,9 @@ class _VendorRegistrationState extends State<VendorRegistration> {
                 CustomInput(
                   hintText: 'Email Address ',
                 ),
-                SizedBox(
-                  height: 20,
-                ),
                 SizedBox(height: 20.h),
                 Container(
-                  height: 50,
+                  height: 60,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     border: Border.all(
@@ -152,12 +173,23 @@ class _VendorRegistrationState extends State<VendorRegistration> {
                     ],
                   ),
                 ),
+                SizedBox(height: 20.h),
+                CustomInput(
+                  hintText: "Business License  Number or EIN if  applicable",
+                ),
+                SizedBox(height: 30),
+                PrimaryButton(
+                    title: 'Submit',
+                    onTap: () {
+                      navigateToPage(
+                          context: context, pageName: VendorProfile());
+                    }),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 GestureDetector(
                   onTap: () {
-                    // navigateToPage(context: context, pageName: LoginScreen());
+                    navigateToPage(context: context, pageName: LoginScreen());
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -177,12 +209,6 @@ class _VendorRegistrationState extends State<VendorRegistration> {
                 SizedBox(
                   height: 40,
                 ),
-                PrimaryButton(
-                    title: 'Submit',
-                    onTap: () {
-                      navigateToPage(
-                          context: context, pageName: VendorProfile());
-                    })
               ],
             ),
           ),

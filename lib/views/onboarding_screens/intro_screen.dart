@@ -4,7 +4,7 @@ import 'package:taptoparty/themes/app_colors.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
 
-import '../auth_screen/signup_screen.dart';
+import 'onboarding_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class IntroScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       navigateToPage(
-                          context: context, pageName: const SignUpScreen());
+                          context: context, pageName: const OnboardingScreen());
                     },
                     child: Container(
                       height: 40.h,
