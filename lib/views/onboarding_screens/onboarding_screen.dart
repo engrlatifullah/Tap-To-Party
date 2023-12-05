@@ -4,6 +4,7 @@ import 'package:taptoparty/utils/navigation.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
 import '../auth_screen/create_an_account.dart';
+import '../auth_screen/login_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -59,25 +60,30 @@ class OnboardingScreen extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have an account?",
-                    style: AppTextStyles.gfsDidotStyle
-                        .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Login",
-                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {
+                  navigateToPage(context: context, pageName: LoginScreen());
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Already have an account?",
+                      style: AppTextStyles.gfsDidotStyle
+                          .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Login",
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               )
             ],
           ),

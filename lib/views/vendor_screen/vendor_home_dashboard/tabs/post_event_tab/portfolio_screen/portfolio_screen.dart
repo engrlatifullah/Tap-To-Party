@@ -416,9 +416,91 @@ class PortfolioScreen extends StatelessWidget {
                     .copyWith(fontSize: 14, fontWeight: FontWeight.w600),
               ),
             ),
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("images/Group 33660.png"),
+                SizedBox(
+                  width: 15,
+                ),
+                Image.asset("images/logos_google-drive.png"),
+                SizedBox(
+                  width: 15,
+                ),
+                Image.asset("images/skill-icons_instagram.png"),
+                SizedBox(
+                  width: 15,
+                ),
+                Image.asset("images/circum_facebook.png"),
+                SizedBox(
+                  width: 15,
+                ),
+                Image.asset("images/logos_google-photos.png"),
+              ],
+            ),
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+              ],
+            ),
             SizedBox(height: 10),
             Row(
-              children: [Image.asset("images/circum_facebook.png")],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+                SizedBox(width: 15),
+                Container(
+                  height: 90,
+                  width: 100,
+                  color: Color(0xFFF1F0ED),
+                ),
+              ],
+            ),
+            SizedBox(height: 30),
+            Row(
+              children: [
+                Checkbox(value: false, onChanged: (v) {}),
+                RichText(
+                  text: TextSpan(
+                      text: "By clicking submit you agree to our ",
+                      style: AppTextStyles.gfsDidotStyle,
+                      children: [
+                        TextSpan(text: "terms "),
+                        TextSpan(
+                            text:
+                                " and acknowledge that you have the rights and permissions of all parties involved.*"),
+                      ]),
+                ),
+              ],
             )
           ],
         ),
