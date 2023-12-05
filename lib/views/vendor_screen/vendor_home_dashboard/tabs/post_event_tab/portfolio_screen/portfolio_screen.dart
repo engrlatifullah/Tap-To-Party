@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/portfolio_screen/terms_for_vendors.dart';
+import 'package:taptoparty/widget/primary_button.dart';
 
 import '../../../../../../themes/app_colors.dart';
 import '../../../../../../themes/app_textstyles.dart';
@@ -487,20 +490,48 @@ class PortfolioScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Checkbox(value: false, onChanged: (v) {}),
-                RichText(
-                  text: TextSpan(
-                      text: "By clicking submit you agree to our ",
-                      style: AppTextStyles.gfsDidotStyle,
-                      children: [
-                        TextSpan(text: "terms "),
-                        TextSpan(
-                            text:
-                                " and acknowledge that you have the rights and permissions of all parties involved.*"),
-                      ]),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      navigateToPage(
+                          context: context, pageName: TermsForVendor());
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                          text: "By clicking submit you agree to our ",
+                          style: AppTextStyles.gfsDidotStyle
+                              .copyWith(fontSize: 12),
+                          children: [
+                            TextSpan(
+                              text: "terms ",
+                              style: AppTextStyles.gfsDidotStyle.copyWith(
+                                  fontSize: 12, fontWeight: FontWeight.w600),
+                            ),
+                            TextSpan(
+                              text:
+                                  " and acknowledge that you have the rights and permissions of all parties involved.*",
+                              style: AppTextStyles.gfsDidotStyle
+                                  .copyWith(fontSize: 12),
+                            ),
+                          ]),
+                    ),
+                  ),
                 ),
               ],
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: SizedBox(
+                height: 30,
+                width: 80,
+                child: PrimaryButton(
+                  title: "Submit",
+                  onTap: () {},
+                ),
+              ),
             )
           ],
         ),
