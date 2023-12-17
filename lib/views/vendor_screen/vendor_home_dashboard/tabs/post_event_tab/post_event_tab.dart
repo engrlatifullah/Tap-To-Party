@@ -4,6 +4,7 @@ import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_e
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/profile_setup_for_service_provider/profile_setup_for_service_provider.dart';
 
 import '../../../../../themes/app_textstyles.dart';
+import 'events_screens/event_promotions_screen/event_promotion_near_by.dart';
 import 'events_screens/events_overview_screen/events_overview_screen.dart';
 
 class PostEventTab extends StatefulWidget {
@@ -69,7 +70,7 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Event Promotions",
-      "page": null,
+      "page": EventPromotionNearBy(),
     },
   ];
 

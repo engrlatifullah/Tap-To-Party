@@ -19,7 +19,7 @@ class _EventsOverviewState extends State<EventsOverview> {
   final List<Map<String, dynamic>> titlesAndNavigation = [
     {"title": "Create Events", "page": CreateEventScreen()},
     {"title": "Upcoming Events", "page": UpComingEvents()},
-    {"title": "Todays Events", "page": TodayEvents()},
+    {"title": "Today's Events", "page": TodayEvents()},
     {"title": "All  Events", "page": AllEvents()},
     {"title": "Public Events", "page": null}
   ];

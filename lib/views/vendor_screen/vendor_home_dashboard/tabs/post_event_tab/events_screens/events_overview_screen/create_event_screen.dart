@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/widget/primary_button.dart';
@@ -35,6 +36,7 @@ class CreateEventScreen extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,6 +64,102 @@ class CreateEventScreen extends StatelessWidget {
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.mainColor),
+                  ),
+                ),
+              ),
+              SizedBox(height: 5),
+              TextField(
+                maxLines: 5,
+                decoration: InputDecoration(
+                    hintText: "Charity Gala",
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ),
+              SizedBox(height: 10),
+              ListTile(
+                visualDensity: VisualDensity(vertical: -4),
+                leading: Icon(Icons.calendar_month),
+                title: Text(
+                  "Where",
+                  style: AppTextStyles.plusJakartaSans
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+              ),
+              ListTile(
+                visualDensity: VisualDensity(vertical: -4),
+                leading: Icon(Icons.location_on),
+                title: Text(
+                  "when",
+                  style: AppTextStyles.plusJakartaSans
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+              ),
+              ListTile(
+                visualDensity: VisualDensity(vertical: -4),
+                leading: Icon(CupertinoIcons.person_3),
+                title: Text(
+                  "No.of guests",
+                  style: AppTextStyles.plusJakartaSans
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+              ),
+              ListTile(
+                visualDensity: VisualDensity(vertical: -4),
+                leading: Icon(CupertinoIcons.person_3),
+                title: Text(
+                  "Client Contact",
+                  style: AppTextStyles.plusJakartaSans
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Order Details.",
+                style: AppTextStyles.plusJakartaSans
+                    .copyWith(fontSize: 14, fontWeight: FontWeight.w300),
+              ),
+              SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.grey.shade300,
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
+                      child: Text("Category$index"),
+                    );
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return Divider(
+                      color: Colors.white,
+                      endIndent: 5,
+                      indent: 5,
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerRight,
+                child: SizedBox(
+                  height: 40,
+                  width: 250,
+                  child: PrimaryButton(
+                    onTap: () {},
+                    title: "Save & Add to the Event List ",
                   ),
                 ),
               )
