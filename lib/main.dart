@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/themes/app_colors.dart';
-import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/events_screens/event_promotions_screen/event_promotion_near_by.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_management_screens/team_management_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const EventPromotionNearBy(),
+      child: const TeamManagementScreen(),
     );
   }
 }
