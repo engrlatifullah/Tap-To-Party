@@ -3,6 +3,7 @@ import 'package:taptoparty/utils/navigation.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/portfolio_screen/portfolio_screen.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/profile_setup_for_service_provider/profile_setup_for_service_provider.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_management_screens/team_management_screen.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_task_home_screens/team_task_home_screen.dart';
 
 import '../../../../../themes/app_textstyles.dart';
 import 'events_screens/event_promotions_screen/event_promotion_near_by.dart';
@@ -35,7 +36,7 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Tasks",
-      "page": null,
+      "page": TeamTaskHome(),
     },
     {
       "title": "Checklist",

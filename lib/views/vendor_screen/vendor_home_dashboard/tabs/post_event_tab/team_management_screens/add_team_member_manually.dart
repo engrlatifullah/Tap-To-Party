@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:taptoparty/utils/navigation.dart';
 
 import '../../../../../../themes/app_colors.dart';
 import '../../../../../../themes/app_textstyles.dart';
+import 'assign_permissions_screen.dart';
 
 class AddTeamMemberManually extends StatefulWidget {
   const AddTeamMemberManually({super.key});
@@ -12,6 +14,7 @@ class AddTeamMemberManually extends StatefulWidget {
 
 class _AddTeamMemberManuallyState extends State<AddTeamMemberManually> {
   String? value;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -250,23 +253,30 @@ class _AddTeamMemberManuallyState extends State<AddTeamMemberManually> {
                   ),
                   SizedBox(width: 10),
                   Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      height: 35,
-                      decoration: ShapeDecoration(
-                        color: Color(0xFF4A4E69),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                    child: GestureDetector(
+                      onTap: () {
+                        navigateToPage(
+                            context: context,
+                            pageName: AssignPermissionsScreen());
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 35,
+                        decoration: ShapeDecoration(
+                          color: Color(0xFF4A4E69),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Next',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.plusJakartaSans.copyWith(
-                            color: Colors.white,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
+                        child: Center(
+                          child: Text(
+                            'Next',
+                            textAlign: TextAlign.center,
+                            style: AppTextStyles.plusJakartaSans.copyWith(
+                              color: Colors.white,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),

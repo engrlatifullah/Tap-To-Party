@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/themes/app_colors.dart';
-import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_management_screens/team_management_screen.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/vendor_home_dashboard.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const TeamManagementScreen(),
+      child: const VendorHomeDashboardScreen(),
     );
   }
 }
