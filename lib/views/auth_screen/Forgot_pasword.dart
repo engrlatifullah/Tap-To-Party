@@ -59,14 +59,20 @@ class ForgotScreen extends StatelessWidget {
               SizedBox(
                 height: 60,
               ),
-              Text(
-                "Mobile Number/Email",
-                style: AppTextStyles.plusJakartaSans
-                    .copyWith(fontWeight: FontWeight.normal, fontSize: 12),
+              Center(child: Image.asset("images/g.gif")),
+              SizedBox(
+                height: 60,
               ),
-              SizedBox(height: 10),
               const CustomInput(
-                hintText: "Email",
+                hintText: "Send OTP via SMS",
+                prefixIcon: Icon(Icons.message_outlined),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              const CustomInput(
+                hintText: "Send OTP via Email",
+                prefixIcon: Icon(Icons.email_outlined),
               ),
               SizedBox(
                 height: 40,

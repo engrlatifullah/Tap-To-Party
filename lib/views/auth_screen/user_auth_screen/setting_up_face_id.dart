@@ -1,9 +1,124 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_colors.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 
-class SettingUpFaceId extends StatelessWidget {
+class SettingUpFaceId extends StatefulWidget {
   const SettingUpFaceId({super.key});
+
+  @override
+  State<SettingUpFaceId> createState() => _SettingUpFaceIdState();
+}
+
+class _SettingUpFaceIdState extends State<SettingUpFaceId> {
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 2), () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            insetPadding: EdgeInsets.symmetric(horizontal: 60),
+            shape: RoundedRectangleBorder(
+                side: BorderSide(color: Colors.black, width: 2)),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset("images/Face ID.png"),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Face ID',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF65666A),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: -0.32,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
+    }).then((value) {
+      Timer(Duration(seconds: 2), () {
+        Navigator.pop(context);
+        showCupertinoDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CupertinoAlertDialog(
+                title: Column(
+                  children: [
+                    Image.asset("images/Face ID.png"),
+                    SizedBox(height: 10),
+                    Text(
+                      'Face Not Recognised',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: -0.41,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      'Try Again',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.plusJakartaSans.copyWith(
+                        color: Colors.black,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: -0.08,
+                      ),
+                    ),
+                  ],
+                ),
+                content: Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Try Face ID Again',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF4A4E69),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: -0.41,
+                        ),
+                      ),
+                    ),
+                    Divider(),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Cancel',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.plusJakartaSans.copyWith(
+                          color: Color(0xFF4A4E69),
+                          fontSize: 17,
+                          letterSpacing: -0.41,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      });
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

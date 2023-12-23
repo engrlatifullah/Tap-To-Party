@@ -45,26 +45,34 @@ class IntroScreen extends StatelessWidget {
                     style: AppTextStyles.plusJakartaSans,
                   ),
                   SizedBox(height: 20.h),
-                  GestureDetector(
-                    onTap: () {
-                      navigateToPage(
-                          context: context, pageName: const OnboardingScreen());
-                    },
-                    child: Container(
-                      height: 40.h,
-                      width: 150.w,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: AppColors.mainColor),
-                      child: Text(
-                        "Let’s Start Tapping!",
-                        style: AppTextStyles.plusJakartaSans.copyWith(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14.sp,
-                            color: AppColors.primaryWhite),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          navigateToPage(
+                              context: context,
+                              pageName: const OnboardingScreen());
+                        },
+                        child: Container(
+                          height: 40.h,
+                          width: 150.w,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: AppColors.mainColor),
+                          child: Text(
+                            "Let’s Start Tapping!",
+                            style: AppTextStyles.plusJakartaSans.copyWith(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 14.sp,
+                                color: AppColors.primaryWhite),
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(width: 10),
+                      SizedBox(
+                          height: 50, child: Image.asset("images/glass.gif"))
+                    ],
                   ),
                 ],
               ),

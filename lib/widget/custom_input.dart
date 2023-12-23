@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_colors.dart';
 
 class CustomInput extends StatelessWidget {
-  final String ? hintText;
-  final Widget ? suffixIcon;
-  final TextEditingController ? controller;
-  const CustomInput({Key? key, this.hintText, this.controller, this.suffixIcon}) : super(key: key);
+  final String? hintText;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final TextEditingController? controller;
+  const CustomInput(
+      {Key? key,
+      this.hintText,
+      this.controller,
+      this.suffixIcon,
+      this.prefixIcon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +21,15 @@ class CustomInput extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: suffixIcon,
-
+        prefixIcon: prefixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: const BorderSide(
-            color: AppColors.mainColor,
-          )
-        ),
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(
+              color: AppColors.mainColor,
+            )),
       ),
     );
   }

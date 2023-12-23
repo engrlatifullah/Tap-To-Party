@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:taptoparty/views/auth_screen/bussniss_owner_registeration/bussniss_owner_registeration.dart.dart';
 import 'package:taptoparty/views/auth_screen/widget/otp_field.dart';
 
 import '../../themes/app_textstyles.dart';
 import '../../utils/navigation.dart';
 import '../../widget/primary_button.dart';
+import 'new_password_screen.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
@@ -64,7 +64,7 @@ class OtpScreen extends StatelessWidget {
                       onTap: () {
                         navigateToPage(
                           context: context,
-                          pageName: BusinessOwnerRegistrationScreen(),
+                          pageName: NewPasswordScreen(),
                         );
                       })),
             )
