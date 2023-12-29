@@ -71,7 +71,7 @@ class _VendorHomeDashboardScreenState extends State<VendorHomeDashboardScreen> {
                     ],
                   ),
                   SizedBox(height: 20),
-                  Image.asset("images/annimation.png"),
+                  Image.asset("images/assa.gif"),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

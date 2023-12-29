@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/payment_screens/payment_screen.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/portfolio_screen/portfolio_screen.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/profile_setup_for_service_provider/profile_setup_for_service_provider.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/quote_screen/create_a_quote_for_client.dart';
@@ -9,6 +10,7 @@ import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_e
 
 import '../../../../../themes/app_textstyles.dart';
 import 'checklist_screen/checklist_screen.dart';
+import 'customers_screens/client_list_overview_screen.dart';
 import 'events_screens/event_promotions_screen/event_promotion_near_by.dart';
 import 'events_screens/events_overview_screen/events_overview_screen.dart';
 
@@ -59,7 +61,7 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Customers",
-      "page": null,
+      "page": ClientListOverviewScreen(),
     },
     {
       "title": "Messages",
@@ -67,7 +69,7 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Payments",
-      "page": null,
+      "page": PaymentScreen(),
     },
     {
       "title": "Quotes",
