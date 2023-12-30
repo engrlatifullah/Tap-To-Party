@@ -34,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
                 height: 120,
                 width: 140,
                 child: Image.asset(
-                  "images/onboard image.png",
+                  "images/jj.gif",
                   fit: BoxFit.cover,
                 ),
               ),
@@ -84,7 +84,7 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

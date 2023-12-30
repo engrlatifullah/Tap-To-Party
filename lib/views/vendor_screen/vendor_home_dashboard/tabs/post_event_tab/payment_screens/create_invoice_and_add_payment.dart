@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/payment_screens/setup_payment_method.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/payment_screens/widget/custom_textfield_for_add_payment.dart';
 
 import '../../../../../../themes/app_colors.dart';
 import '../../../../../../themes/app_textstyles.dart';
@@ -305,6 +308,38 @@ class CreateInvoiceAndAddPaymentScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: InkWell(
+                  onTap: (){
+                    navigateToPage(context: context, pageName: SetupPaymentMethod());
+                  },
+                  child: Container(
+                    width: 170,
+                    height: 32,
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFA99F96),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFF4A4E69)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Center(
+                      child: SizedBox(
+                        width: 63,
+                        child: Text(
+                          'Add',
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.plusJakartaSans.copyWith(
+                            color: Colors.black,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               )
             ],
           ),
@@ -315,38 +350,4 @@ class CreateInvoiceAndAddPaymentScreen extends StatelessWidget {
 }
 
 
-class CustomTextFieldForAddPayment extends StatelessWidget {
-  final TextEditingController ? controller;
-  final int maxLines;
-  const CustomTextFieldForAddPayment({super.key, this.controller,  this.maxLines = 1});
 
-  @override
-  Widget build(BuildContext context) {
-    return maxLines == 1 ? SizedBox(
-      height: 40,
-      child: TextField(
-        controller: controller,
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF4A4E69)),
-          ),
-          focusedBorder: OutlineInputBorder()
-        ),
-      ),
-    ) : TextField(
-      controller: controller,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF4A4E69)),
-          ),
-          focusedBorder: OutlineInputBorder()
-      ),
-    );
-  }
-}

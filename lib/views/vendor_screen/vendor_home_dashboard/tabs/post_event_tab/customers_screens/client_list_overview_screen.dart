@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/utils/navigation.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
@@ -91,30 +92,33 @@ class ClientListOverviewScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Container(
-              width: 361,
+              width: double.infinity,
               height: 60,
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(
                 color: Color(0xFFA99F96),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Name',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                      color: Colors.black,
-                      fontSize: 14,
+                  Expanded(
+                    child: Text(
+                      'Name',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: 11.sp,
+                      ),
                     ),
                   ),
                   SizedBox(width: 10),
-                  Text(
-                    'Phone',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                      color: Colors.black,
-                      fontSize: 14,
+                  Expanded(
+                    child: Text(
+                      'Phone',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: 11.sp,
+                      ),
                     ),
                   ),
                   SizedBox(width: 10),
@@ -123,16 +127,18 @@ class ClientListOverviewScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: AppTextStyles.gfsDidotStyle.copyWith(
                       color: Colors.black,
-                      fontSize: 14,
+                      fontSize: 11.sp,
                     ),
                   ),
                   SizedBox(width: 10),
-                  Text(
-                    'Upcoming Event',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                      color: Colors.black,
-                      fontSize: 14,
+                  Expanded(
+                    child: Text(
+                      'Upcoming Event',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: 11.sp,
+                      ),
                     ),
                   ),
                 ],
@@ -145,66 +151,68 @@ class ClientListOverviewScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 20,
-                            height: 16,
-                            decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                    width: 1, color: Color(0xFF4A4E69)),
-                                borderRadius: BorderRadius.circular(5),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 15,
+                              height: 16,
+                              decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                      width: 1, color: Color(0xFF4A4E69)),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 5),
-                          Text(
-                            'Dan Smith',
-                            textAlign: TextAlign.center,
-                            style: AppTextStyles.gfsDidotStyle.copyWith(
-                              color: Colors.black,
-                              fontSize: 14,
+                            SizedBox(width: 10),
+                            Text(
+                              'Dan Smith',
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.gfsDidotStyle.copyWith(
+                                color: Colors.black,
+                                fontSize: 11.sp,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       SizedBox(
-                        width: 4,
+                        width: 10,
                       ),
                       Text(
                         '429 346 7892',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.gfsDidotStyle.copyWith(
                           color: Colors.black,
-                          fontSize: 14,
+                          fontSize: 11.sp,
                         ),
                       ),
                       SizedBox(
-                        width: 4,
+                        width: 10,
                       ),
                       Text(
                         'd@gmail.com',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.gfsDidotStyle.copyWith(
                           color: Colors.black,
-                          fontSize: 14,
+                          fontSize: 11.sp,
                         ),
                       ),
                       SizedBox(
-                        width: 4,
+                        width: 10,
                       ),
                       Text(
                         'Birthday',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.gfsDidotStyle.copyWith(
                           color: Colors.black,
-                          fontSize: 14,
+                          fontSize: 11.sp
+                          ,
                         ),
                       ),
                     ],

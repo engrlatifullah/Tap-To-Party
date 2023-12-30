@@ -13,6 +13,7 @@ import 'checklist_screen/checklist_screen.dart';
 import 'customers_screens/client_list_overview_screen.dart';
 import 'events_screens/event_promotions_screen/event_promotion_near_by.dart';
 import 'events_screens/events_overview_screen/events_overview_screen.dart';
+import 'messages_screen/vendor_messaging_with_clients.dart';
 
 class PostEventTab extends StatefulWidget {
   const PostEventTab({super.key});
@@ -65,7 +66,7 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Messages",
-      "page": null,
+      "page": VendorMessagingWithClient(),
     },
     {
       "title": "Payments",
