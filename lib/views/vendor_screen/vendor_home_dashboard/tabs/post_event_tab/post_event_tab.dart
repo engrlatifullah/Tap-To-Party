@@ -5,6 +5,7 @@ import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_e
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/profile_setup_for_service_provider/profile_setup_for_service_provider.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/quote_screen/create_a_quote_for_client.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/quote_screen/quote_screen.dart';
+import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/suppliers_for_vendor_screens/find_suppliers_screen.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_management_screens/team_management_screen.dart';
 import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/tabs/post_event_tab/team_task_home_screens/team_task_home_screen.dart';
 
@@ -13,6 +14,7 @@ import 'checklist_screen/checklist_screen.dart';
 import 'customers_screens/client_list_overview_screen.dart';
 import 'events_screens/event_promotions_screen/event_promotion_near_by.dart';
 import 'events_screens/events_overview_screen/events_overview_screen.dart';
+import 'inventory/inventory_overveiw.dart';
 import 'messages_screen/vendor_messaging_with_clients.dart';
 
 class PostEventTab extends StatefulWidget {
@@ -50,11 +52,11 @@ class _PostEventTabState extends State<PostEventTab> {
     },
     {
       "title": "Inventory",
-      "page": null,
+      "page": InventoryOverview(),
     },
     {
       "title": "Suppliers",
-      "page": null,
+      "page": FindSuppliersScreen(),
     },
     {
       "title": "Products",
