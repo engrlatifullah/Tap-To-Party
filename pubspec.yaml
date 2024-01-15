@@ -44,6 +44,7 @@ dependencies:
   dotted_border: ^2.1.0
   passcode_screen: ^2.0.1
   cart_stepper: ^4.3.0
+  date_picker_timeline: ^1.2.5
 
 dev_dependencies:
   flutter_test:
