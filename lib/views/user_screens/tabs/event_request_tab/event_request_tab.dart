@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:taptoparty/utils/navigation.dart';
 
 import '../../../../themes/app_textstyles.dart';
-import 'co_host_screen.dart';
-import 'my_event_screen.dart';
+import 'co_host_screens/co_host_screen.dart';
+import 'event_hub_screen/party_website_screen.dart';
+import 'gusts_screens/create_guest_list.dart';
+import 'my_event_screen/my_event_screen.dart';
 
 class EventRequestTab extends StatefulWidget {
   const EventRequestTab({super.key});
@@ -24,7 +26,11 @@ class _EventRequestTabState extends State<EventRequestTab> {
     },
     {
       "name": "Guests",
-      "page": null,
+      "page": CreateGuestList(),
+    },
+    {
+      "name": 'My Event Hub',
+      "page": PartyWebsiteScreen(),
     },
     {
       "name": "Photo Gallery",
@@ -36,10 +42,6 @@ class _EventRequestTabState extends State<EventRequestTab> {
     },
     {
       "name": "Vendor Communication",
-      "page": null,
-    },
-    {
-      "name": "Guest Messages",
       "page": null,
     },
     {

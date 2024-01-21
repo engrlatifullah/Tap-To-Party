@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../themes/app_textstyles.dart';
+import '../../../../../themes/app_textstyles.dart';
+import 'adding_co_host.dart';
 
 class CoHostScreen extends StatelessWidget {
   const CoHostScreen({super.key});
@@ -81,10 +82,20 @@ class CoHostScreen extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      Icon(
-                        Icons.add,
-                        size: 30,
-                        color: Colors.white,
+                      GestureDetector(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AddCoHost();
+                            },
+                          );
+                        },
+                        child: Icon(
+                          Icons.add,
+                          size: 30,
+                          color: Colors.white,
+                        ),
                       )
                     ],
                   ),

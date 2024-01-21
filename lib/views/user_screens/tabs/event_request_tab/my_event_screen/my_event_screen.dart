@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
+import 'package:taptoparty/utils/navigation.dart';
+
+import 'event_detail_screen.dart';
 
 class MyEventScreen extends StatelessWidget {
   const MyEventScreen({super.key});
@@ -135,9 +138,17 @@ class MyEventScreen extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Icon(
-                                              Icons.edit,
-                                              color: Color(0xFF4A4E69),
+                                            GestureDetector(
+                                              onTap: () {
+                                                navigateToPage(
+                                                    context: context,
+                                                    pageName:
+                                                        EventDetailScreen());
+                                              },
+                                              child: Icon(
+                                                Icons.edit,
+                                                color: Color(0xFF4A4E69),
+                                              ),
                                             ),
                                             Icon(
                                               Icons.delete_outlined,
