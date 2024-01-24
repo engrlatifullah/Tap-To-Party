@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
-import 'package:taptoparty/views/user_screens/tabs/planing_event_screen/planing_event_screen.dart';
+import 'package:taptoparty/views/user_screens/planing_event_screen/planing_event_screen.dart';
 import 'package:taptoparty/views/user_screens/tabs/event_request_tab/event_request_tab.dart';
+import 'package:taptoparty/views/user_screens/user_profile_screen.dart';
 
 class UserHomeDashboardScreen extends StatefulWidget {
   const UserHomeDashboardScreen({super.key});
@@ -18,8 +19,6 @@ class _UserHomeDashboardScreenState extends State<UserHomeDashboardScreen> {
     "Notifications",
     "Group Event"
   ];
-
-
 
   int currentIndex = 0;
 
@@ -80,8 +79,16 @@ class _UserHomeDashboardScreenState extends State<UserHomeDashboardScreen> {
                         ),
                         Column(
                           children: [
-                            CircleAvatar(
-                              backgroundImage: AssetImage("images/5.jpg"),
+                            GestureDetector(
+                              onTap: () {
+                                navigateToPage(
+                                  context: context,
+                                  pageName: UserProfileScreen(),
+                                );
+                              },
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage("images/5.jpg"),
+                              ),
                             ),
                             Text(
                               'Hello Maria!     ',
@@ -101,8 +108,9 @@ class _UserHomeDashboardScreenState extends State<UserHomeDashboardScreen> {
                         child: Image.asset(
                             "images/a3b39067dcdafcbdb150ad3f54bcaec4.gif")),
                     GestureDetector(
-                      onTap: (){
-                        navigateToPage(context: context, pageName: PlaningEventScreen());
+                      onTap: () {
+                        navigateToPage(
+                            context: context, pageName: PlaningEventScreen());
                       },
                       child: Container(
                         width: double.infinity,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:taptoparty/views/user_screens/tabs/planing_event_screen/search_for_events_screen/tabs/events_tab.dart';
-import 'package:taptoparty/views/user_screens/tabs/planing_event_screen/search_for_events_screen/tabs/vendors_tab.dart';
-import 'package:taptoparty/views/user_screens/tabs/planing_event_screen/search_for_events_screen/tabs/venues_screen.dart';
+import 'package:taptoparty/views/user_screens/planing_event_screen/search_for_events_screen/tabs/events_tab.dart';
+import 'package:taptoparty/views/user_screens/planing_event_screen/search_for_events_screen/tabs/vendors_tab.dart';
+import 'package:taptoparty/views/user_screens/planing_event_screen/search_for_events_screen/tabs/venues_screen.dart';
+
 import '../../../../../themes/app_colors.dart';
 import '../../../../../themes/app_textstyles.dart';
 

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/themes/app_colors.dart';
-import 'package:taptoparty/views/auth_screen/user_auth_screen/user_signup2.dart';
-import 'package:taptoparty/views/onboarding_screens/intro_screen.dart';
-import 'package:taptoparty/views/team_member_screens/team_member_dashboard_screen.dart';
+import 'package:taptoparty/views/group_activity/group_activity_screen.dart';
 import 'package:taptoparty/views/user_screens/user_home_dashboard_screen.dart';
-import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/vendor_home_dashboard.dart';
 
 void main() => runApp(const MyApp());
 
@@ -30,7 +27,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const UserHomeDashboardScreen(),
+      child: const GroupActivityScreen(),
     );
   }
 }

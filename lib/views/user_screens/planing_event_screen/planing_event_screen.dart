@@ -1,9 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
-import 'package:taptoparty/views/user_screens/tabs/planing_event_screen/search_for_events_screen/search_for_events_screen.dart';
+import 'package:taptoparty/views/user_screens/planing_event_screen/search_for_events_screen/search_for_events_screen.dart';
 
 class PlaningEventScreen extends StatelessWidget {
   const PlaningEventScreen({super.key});
@@ -118,8 +116,10 @@ class PlaningEventScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: GestureDetector(
-                                onTap: (){
-                                  navigateToPage(context: context, pageName: SearchForEventScreen());
+                                onTap: () {
+                                  navigateToPage(
+                                      context: context,
+                                      pageName: SearchForEventScreen());
                                 },
                                 child: Container(
                                   height: 32,
@@ -135,8 +135,8 @@ class PlaningEventScreen extends StatelessWidget {
                                     child: Text(
                                       'Events',
                                       textAlign: TextAlign.center,
-                                      style:
-                                          AppTextStyles.plusJakartaSans.copyWith(
+                                      style: AppTextStyles.plusJakartaSans
+                                          .copyWith(
                                         color: Color(0xEDF1F0ED),
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,

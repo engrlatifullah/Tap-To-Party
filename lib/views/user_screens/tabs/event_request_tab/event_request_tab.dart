@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/user_screens/tabs/event_request_tab/rsvp_screens/rsvp_screen.dart';
 
 import '../../../../themes/app_textstyles.dart';
+import '../../../vendor_screen/vendor_home_dashboard/tabs/post_event_tab/favorites_screen/favorites_screen.dart';
+import 'chat_with_vendor/vendor_communication_screen/vendor_communication_screen.dart';
+import 'check_list_and_task_list_screen/check_list_and_task_list_screen.dart';
 import 'co_host_screens/co_host_screen.dart';
 import 'event_hub_screen/party_website_screen.dart';
+import 'evites_screens/evites_screens.dart';
+import 'expenses_screens/expense_screen.dart';
 import 'gusts_screens/create_guest_list.dart';
 import 'my_event_screen/my_event_screen.dart';
 
@@ -38,11 +44,11 @@ class _EventRequestTabState extends State<EventRequestTab> {
     },
     {
       "name": "Invites",
-      "page": null,
+      "page": EviteScreen(),
     },
     {
       "name": "Vendor Communication",
-      "page": null,
+      "page": VendorCommunicationScreen(),
     },
     {
       "name": "Guest Messages",
@@ -50,19 +56,19 @@ class _EventRequestTabState extends State<EventRequestTab> {
     },
     {
       "name": "Expenses",
-      "page": null,
+      "page": ExpansesScreen(),
     },
     {
       "name": "Checklist\n&\nTask List",
-      "page": null,
+      "page": CheckListAndTaskListScreen(),
     },
     {
       "name": "Favorites",
-      "page": null,
+      "page": FavoriteScreen(),
     },
     {
       "name": "RSVPs",
-      "page": null,
+      "page": RsvpScreen(),
     },
   ];
   @override

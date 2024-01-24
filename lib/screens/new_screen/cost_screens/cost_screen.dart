@@ -118,8 +118,7 @@ class _CostScreenState extends State<CostScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      navigateToPage(
-                          context: context, pageName: CostDetailsScreen());
+                      navigateToPage(context: context, pageName: CostDetails());
                     },
                     child: Container(
                       height: 30,

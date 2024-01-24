@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taptoparty/themes/app_colors.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 
-
-
-class CostDetailsScreen extends StatelessWidget {
-  const CostDetailsScreen({super.key});
+class CostDetails extends StatelessWidget {
+  const CostDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +28,8 @@ class CostDetailsScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Tap To Part",
-                      style: AppTextStyles.gfsDidotStyle
-                          .copyWith(fontSize: 20, color: AppColors.primaryWhite),
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                          fontSize: 20, color: AppColors.primaryWhite),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -75,16 +72,14 @@ class CostDetailsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     //Cost table
                     SizedBox(height: 20),
                     Text(
                       "Cost",
-                      style: AppTextStyles.gfsDidotStyle
-                          .copyWith(fontSize: 16, color: AppColors.primaryBlack),
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                          fontSize: 16, color: AppColors.primaryBlack),
                     ),
                     SizedBox(height: 15),
-
 
                     //header
                     Container(
@@ -138,16 +133,24 @@ class CostDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     //Footer
-                    CostTableRow(item: "Food",cost: "\$200",paidBy: "Mike",),
+                    CostTableRow(
+                      item: "Food",
+                      cost: "\$200",
+                      paidBy: "Mike",
+                    ),
 
-                    CostTableRow(item: "Photographer",cost: "\$80",paidBy: "Mary",),
+                    CostTableRow(
+                      item: "Photographer",
+                      cost: "\$80",
+                      paidBy: "Mary",
+                    ),
 
                     //Payment table
                     SizedBox(height: 20),
                     Text(
                       "Payment Summary",
-                      style: AppTextStyles.gfsDidotStyle
-                          .copyWith(fontSize: 16, color: AppColors.primaryBlack),
+                      style: AppTextStyles.gfsDidotStyle.copyWith(
+                          fontSize: 16, color: AppColors.primaryBlack),
                     ),
                     SizedBox(height: 15),
 
@@ -193,9 +196,19 @@ class CostDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     //Footer
-                    PaymentTableRow(name: "Mike",status: "is owe" ,amount: "\$40", statusColor: Colors.green,),
+                    PaymentTableRow(
+                      name: "Mike",
+                      status: "is owe",
+                      amount: "\$40",
+                      statusColor: Colors.green,
+                    ),
 
-                    PaymentTableRow(name: "Jenny",status: "owe",amount:  "\$30", statusColor: Colors.red,),
+                    PaymentTableRow(
+                      name: "Jenny",
+                      status: "owe",
+                      amount: "\$30",
+                      statusColor: Colors.red,
+                    ),
 
                     SizedBox(height: 30),
                     Container(
@@ -249,11 +262,23 @@ class CostDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     //Footer
-                    NameWithOwesAndAmount(name: 'John', owes: 'owes',owesColor: Colors.red, nameForAmount: 'Ali', amount: '\$30',),
-                    NameWithOwesAndAmount(name: 'Lucky', owes: 'owes',owesColor: Colors.red, nameForAmount: 'Raj', amount: '\$130',),
+                    NameWithOwesAndAmount(
+                      name: 'John',
+                      owes: 'owes',
+                      owesColor: Colors.red,
+                      nameForAmount: 'Ali',
+                      amount: '\$30',
+                    ),
+                    NameWithOwesAndAmount(
+                      name: 'Lucky',
+                      owes: 'owes',
+                      owesColor: Colors.red,
+                      nameForAmount: 'Raj',
+                      amount: '\$130',
+                    ),
                     SizedBox(height: 30),
                     GestureDetector(
-                      onTap: () =>Navigator.pop(context),
+                      onTap: () => Navigator.pop(context),
                       child: Center(
                         child: Container(
                           height: 30,
@@ -282,18 +307,21 @@ class CostDetailsScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }
+
 class CostTableRow extends StatelessWidget {
   final String item;
   final String cost;
   final String paidBy;
-  const CostTableRow({super.key, required this.item, required this.cost, required this.paidBy});
+  const CostTableRow(
+      {super.key,
+      required this.item,
+      required this.cost,
+      required this.paidBy});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -303,8 +331,7 @@ class CostTableRow extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 item,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
@@ -313,8 +340,7 @@ class CostTableRow extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 cost,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
@@ -323,33 +349,35 @@ class CostTableRow extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 paidBy,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
           Expanded(
-            child: Container(
-                alignment: Alignment.center,
-                child: Icon(Icons.keyboard_arrow_down_outlined))
-          ),
+              child: Container(
+                  alignment: Alignment.center,
+                  child: Icon(Icons.keyboard_arrow_down_outlined))),
         ],
       ),
     );
   }
 }
 
-
 class PaymentTableRow extends StatelessWidget {
   final String name;
   final String status;
   final String amount;
   final Color statusColor;
-  const PaymentTableRow({super.key, required this.name, required this.status, required this.amount, required this.statusColor});
+  const PaymentTableRow(
+      {super.key,
+      required this.name,
+      required this.status,
+      required this.amount,
+      required this.statusColor});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -359,8 +387,7 @@ class PaymentTableRow extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 name,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
@@ -370,7 +397,7 @@ class PaymentTableRow extends StatelessWidget {
               child: Text(
                 status,
                 style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14,color: statusColor),
+                    .copyWith(fontSize: 14, color: statusColor),
               ),
             ),
           ),
@@ -379,12 +406,10 @@ class PaymentTableRow extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 amount,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
-
         ],
       ),
     );
@@ -397,11 +422,17 @@ class NameWithOwesAndAmount extends StatelessWidget {
   final String nameForAmount;
   final String amount;
   final Color owesColor;
-  const NameWithOwesAndAmount({super.key, required this.name, required this.owes, required this.nameForAmount, required this.amount, required this.owesColor});
+  const NameWithOwesAndAmount(
+      {super.key,
+      required this.name,
+      required this.owes,
+      required this.nameForAmount,
+      required this.amount,
+      required this.owesColor});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -411,8 +442,7 @@ class NameWithOwesAndAmount extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 name,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
@@ -422,7 +452,7 @@ class NameWithOwesAndAmount extends StatelessWidget {
               child: Text(
                 owes,
                 style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14,color: owesColor),
+                    .copyWith(fontSize: 14, color: owesColor),
               ),
             ),
           ),
@@ -431,8 +461,7 @@ class NameWithOwesAndAmount extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 nameForAmount,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
@@ -441,12 +470,10 @@ class NameWithOwesAndAmount extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 amount,
-                style: AppTextStyles.gfsDidotStyle
-                    .copyWith(fontSize: 14),
+                style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
               ),
             ),
           ),
-
         ],
       ),
     );
