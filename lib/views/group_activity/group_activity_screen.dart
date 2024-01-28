@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_colors.dart';
 import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/group_activity/create_pol.dart';
+import 'package:taptoparty/views/group_activity/view_pol.dart';
+import 'package:taptoparty/views/group_activity/who_is_in.dart';
 
 import '../../../../../themes/app_textstyles.dart';
 import 'cost_details_screen.dart';
-import 'create_group_screen.dart';
+import 'date_suggestion_screen.dart';
 import 'group_chat_screen.dart';
 import 'invite_friends_for_group.dart';
 
@@ -150,46 +153,54 @@ class GroupActivityScreen extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Image(
-                              image: AssetImage('images/personpicicon.png'),
-                            ),
-                            SizedBox(width: 10),
-                            Text(
-                              'Who’s In',
-                              style: AppTextStyles.gfsDidotStyle.copyWith(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
+                        GestureDetector(
+                          onTap: () {
+                            navigateToPage(
+                              context: context,
+                              pageName: WhoIsInScreen(),
+                            );
+                          },
+                          child: Row(
+                            children: [
+                              Image(
+                                image: AssetImage('images/personpicicon.png'),
                               ),
-                            ),
-                            Spacer(),
-                            Row(
-                              children: [
-                                Text(
-                                  '10 IN -',
-                                  style: AppTextStyles.gfsDidotStyle.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                      color: Color(0xff4CAF50)),
+                              SizedBox(width: 10),
+                              Text(
+                                'Who’s In',
+                                style: AppTextStyles.gfsDidotStyle.copyWith(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w400,
                                 ),
-                                Text(
-                                  '6 NOT going -',
-                                  style: AppTextStyles.gfsDidotStyle.copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xffE53935)),
-                                ),
-                                Text(
-                                  ' 4 Maybe',
-                                  style: AppTextStyles.gfsDidotStyle.copyWith(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xff4285F4)),
-                                )
-                              ],
-                            )
-                          ],
+                              ),
+                              Spacer(),
+                              Row(
+                                children: [
+                                  Text(
+                                    '10 IN -',
+                                    style: AppTextStyles.gfsDidotStyle.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15,
+                                        color: Color(0xff4CAF50)),
+                                  ),
+                                  Text(
+                                    '6 NOT going -',
+                                    style: AppTextStyles.gfsDidotStyle.copyWith(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffE53935)),
+                                  ),
+                                  Text(
+                                    ' 4 Maybe',
+                                    style: AppTextStyles.gfsDidotStyle.copyWith(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff4285F4)),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 20,
@@ -388,36 +399,45 @@ class GroupActivityScreen extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Container(
-                          height: 46,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 80),
-                                  child: Text(
-                                    'Decide a Date ',
-                                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
+                        GestureDetector(
+                          onTap: () {
+                            navigateToPage(
+                              context: context,
+                              pageName: DateSuggestionScreen(),
+                            );
+                          },
+                          child: Container(
+                            height: 46,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 80),
+                                    child: Text(
+                                      'Decide a Date ',
+                                      style:
+                                          AppTextStyles.gfsDidotStyle.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 18,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(
-                                  Icons.keyboard_arrow_down,
-                                  color: Colors.black,
-                                  size: 30,
-                                )
-                              ],
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_down,
+                                    color: Colors.black,
+                                    size: 30,
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -446,28 +466,34 @@ class GroupActivityScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Container(
-                          width: 144,
-                          height: 53,
-                          decoration: ShapeDecoration(
-                            color: Color(0xEDA99F96),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                        GestureDetector(
+                          onTap: () {
+                            navigateToPage(
+                                context: context, pageName: ViewPolScreen());
+                          },
+                          child: Container(
+                            width: 144,
+                            height: 53,
+                            decoration: ShapeDecoration(
+                              color: Color(0xEDA99F96),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                )
+                              ],
                             ),
-                            shadows: [
-                              BoxShadow(
-                                color: Color(0x3F000000),
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                spreadRadius: 0,
-                              )
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              ' View Poll',
-                              style: AppTextStyles.gfsDidotStyle.copyWith(
-                                fontSize: 20,
+                            child: Center(
+                              child: Text(
+                                ' View Poll',
+                                style: AppTextStyles.gfsDidotStyle.copyWith(
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
@@ -476,8 +502,7 @@ class GroupActivityScreen extends StatelessWidget {
                         GestureDetector(
                           onTap: () {
                             navigateToPage(
-                                context: context,
-                                pageName: CreateGroupScreen());
+                                context: context, pageName: CreatePolScreen());
                           },
                           child: Container(
                             width: 144,

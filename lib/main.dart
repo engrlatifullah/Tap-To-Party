@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/themes/app_colors.dart';
-import 'package:taptoparty/views/group_activity/group_activity_screen.dart';
-import 'package:taptoparty/views/user_screens/user_home_dashboard_screen.dart';
+import 'package:taptoparty/views/shops_screen/vendor_product_for_sale_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const GroupActivityScreen(),
+      child: const VendorProductForSaleScreen(),
     );
   }
 }

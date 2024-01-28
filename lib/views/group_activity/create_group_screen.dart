@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/app_textstyles.dart';
+import 'add_people_screen.dart';
 
 class CreateGroupScreen extends StatelessWidget {
   const CreateGroupScreen({super.key});
@@ -121,29 +122,58 @@ class CreateGroupScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: ListView.separated(
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Row(
-                                    children: [
-                                      Icon(Icons.person_pin),
-                                      SizedBox(width: 10),
-                                      Text(
-                                        'Name',
-                                        style: AppTextStyles.gfsDidotStyle
-                                            .copyWith(
-                                          fontSize: 14,
-                                        ),
-                                      )
-                                    ],
-                                  );
-                                },
-                                separatorBuilder:
-                                    (BuildContext context, int index) {
-                                  return SizedBox(height: 10);
-                                },
-                                itemCount: 4,
+                              child: Column(
+                                children: [
+                                  ListView.separated(
+                                    shrinkWrap: true,
+                                    physics: NeverScrollableScrollPhysics(),
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return Row(
+                                        children: [
+                                          Icon(Icons.person_pin),
+                                          SizedBox(width: 10),
+                                          Text(
+                                            'Name',
+                                            style: AppTextStyles.gfsDidotStyle
+                                                .copyWith(
+                                              fontSize: 14,
+                                            ),
+                                          )
+                                        ],
+                                      );
+                                    },
+                                    separatorBuilder:
+                                        (BuildContext context, int index) {
+                                      return SizedBox(height: 10);
+                                    },
+                                    itemCount: 4,
+                                  ),
+                                  SizedBox(height: 20),
+                                  GestureDetector(
+                                    onTap: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return AddPeopleScreen();
+                                        },
+                                      );
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.add),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Add people',
+                                          style: AppTextStyles.gfsDidotStyle
+                                              .copyWith(
+                                            fontSize: 14,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                             SizedBox(width: 20),

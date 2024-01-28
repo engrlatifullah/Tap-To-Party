@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/app_textstyles.dart';
+import '../../utils/navigation.dart';
+import 'create_group_screen.dart';
 
 class InviteFriendsForGroup extends StatefulWidget {
   const InviteFriendsForGroup({super.key});
@@ -36,8 +38,13 @@ class _InviteFriendsForGroupState extends State<InviteFriendsForGroup> {
                               children: [
                                 Row(
                                   children: [
-                                    Icon(
-                                      Icons.navigate_before,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        Icons.navigate_before,
+                                      ),
                                     ),
                                     SizedBox(width: 5),
                                     Icon(
@@ -146,6 +153,9 @@ class _InviteFriendsForGroupState extends State<InviteFriendsForGroup> {
                               setState(() {
                                 _currentIndex = 1;
                               });
+                              navigateToPage(
+                                  context: context,
+                                  pageName: CreateGroupScreen());
                             },
                             child: Container(
                               height: 38,
@@ -314,21 +324,24 @@ class _InviteFriendsForGroupState extends State<InviteFriendsForGroup> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Container(
-                              width: 227,
-                              height: 46,
-                              decoration: ShapeDecoration(
-                                color: Color(0xEDF1F0ED),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                width: 227,
+                                height: 46,
+                                decoration: ShapeDecoration(
+                                  color: Color(0xEDF1F0ED),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Invite Friends',
-                                  textAlign: TextAlign.center,
-                                  style: AppTextStyles.gfsDidotStyle.copyWith(
-                                    fontSize: 16,
+                                child: Center(
+                                  child: Text(
+                                    'Invite Friends',
+                                    textAlign: TextAlign.center,
+                                    style: AppTextStyles.gfsDidotStyle.copyWith(
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
                               ),
