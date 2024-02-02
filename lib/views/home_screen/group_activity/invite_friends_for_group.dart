@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/app_textstyles.dart';
-import '../../utils/navigation.dart';
+import '../../../themes/app_textstyles.dart';
+import '../../../utils/navigation.dart';
 import 'create_group_screen.dart';
 
 class InviteFriendsForGroup extends StatefulWidget {

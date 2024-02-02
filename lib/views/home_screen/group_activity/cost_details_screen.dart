@@ -116,6 +116,7 @@ class CostDetailsScreen extends StatelessWidget {
                                     .copyWith(fontSize: 14),
                               ),
                             ),
+                            SizedBox(width: 10),
                             Expanded(
                               child: Text(
                                 "Cost",
@@ -393,6 +394,7 @@ class CostTableRow extends StatelessWidget {
               style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
             ),
           ),
+          SizedBox(width: 10),
           Expanded(
             child: Text(
               cost,
@@ -405,7 +407,10 @@ class CostTableRow extends StatelessWidget {
               style: AppTextStyles.gfsDidotStyle.copyWith(fontSize: 14),
             ),
           ),
-          Expanded(child: Icon(Icons.keyboard_arrow_down_outlined)),
+          Expanded(
+              child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(Icons.keyboard_arrow_down_outlined))),
         ],
       ),
     );

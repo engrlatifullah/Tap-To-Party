@@ -90,7 +90,9 @@ class EventRegistryScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomCards(),
+                      CustomCards(
+                        txt: 'Pottery Barn',
+                      ),
                       SizedBox(height: 10),
                       SizedBox(
                         height: 30,
@@ -105,43 +107,9 @@ class EventRegistryScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomCards(),
-                      SizedBox(height: 10),
-                      SizedBox(
-                        height: 30,
-                        child: Switch(
-                          trackOutlineWidth: MaterialStateProperty.all(1),
-                          value: false,
-                          onChanged: (v) {},
-                        ),
+                      CustomCards(
+                        txt: 'Macys',
                       ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomCards(),
-                      SizedBox(height: 10),
-                      SizedBox(
-                        height: 30,
-                        child: Switch(
-                          trackOutlineWidth: MaterialStateProperty.all(1),
-                          value: false,
-                          onChanged: (v) {},
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomCards(),
                       SizedBox(height: 10),
                       SizedBox(
                         height: 30,
@@ -162,7 +130,9 @@ class EventRegistryScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomCards(),
+                      CustomCards(
+                        txt: 'Anthropologie',
+                      ),
                       SizedBox(height: 10),
                       SizedBox(
                         height: 30,
@@ -177,7 +147,49 @@ class EventRegistryScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomCards(),
+                      CustomCards(
+                        txt: 'Nordstrom',
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(
+                        height: 30,
+                        child: Switch(
+                          trackOutlineWidth: MaterialStateProperty.all(1),
+                          value: false,
+                          onChanged: (v) {},
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomCards(
+                        txt: 'Amazon',
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(
+                        height: 30,
+                        child: Switch(
+                          trackOutlineWidth: MaterialStateProperty.all(1),
+                          value: false,
+                          onChanged: (v) {},
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomCards(
+                        txt: 'Target',
+                      ),
                       SizedBox(height: 10),
                       SizedBox(
                         height: 30,
@@ -231,8 +243,10 @@ class EventRegistryScreen extends StatelessWidget {
 }
 
 class CustomCards extends StatelessWidget {
+  final String txt;
   const CustomCards({
     super.key,
+    required this.txt,
   });
 
   @override
@@ -241,10 +255,15 @@ class CustomCards extends StatelessWidget {
       width: 151,
       height: 81,
       decoration: ShapeDecoration(
-        image: DecorationImage(
-            image: AssetImage("images/PotteryBarn_logo_PNG1 1.png")),
         color: Colors.white,
         shape: RoundedRectangleBorder(side: BorderSide(width: 1)),
+      ),
+      child: Center(
+        child: Text(
+          txt,
+          style: AppTextStyles.plusJakartaSans
+              .copyWith(fontSize: 16, fontWeight: FontWeight.w700),
+        ),
       ),
     );
   }

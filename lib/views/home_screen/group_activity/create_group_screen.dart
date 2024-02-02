@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/app_textstyles.dart';
+import '../../../themes/app_textstyles.dart';
 import 'add_people_screen.dart';
 
 class CreateGroupScreen extends StatelessWidget {

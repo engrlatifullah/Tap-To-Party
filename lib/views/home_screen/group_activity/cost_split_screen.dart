@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/utils/navigation.dart';
-import 'package:taptoparty/views/group_activity/payment_setup_screen.dart';
+import 'package:taptoparty/views/home_screen/group_activity/payment_setup_screen.dart';
 
-import '../../themes/app_textstyles.dart';
+import '../../../themes/app_textstyles.dart';
 
 class CostSplitScreen extends StatelessWidget {
   const CostSplitScreen({super.key});

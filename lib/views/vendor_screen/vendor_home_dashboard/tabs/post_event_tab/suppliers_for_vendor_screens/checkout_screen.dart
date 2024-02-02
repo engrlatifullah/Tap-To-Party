@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
@@ -12,13 +11,15 @@ class CheckOutScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFF1F0EDED),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,elevation: 0,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         centerTitle: true,
         leading: GestureDetector(
-          onTap: ()=>Navigator.of(context),
+          onTap: () => Navigator.of(context),
           child: Container(
             width: 45,
-            height: 45,margin: EdgeInsets.all(10),
+            height: 45,
+            margin: EdgeInsets.all(10),
             decoration: ShapeDecoration(
               color: Color(0xFFFEFEFE),
               shape: OvalBorder(),
@@ -49,14 +50,13 @@ class CheckOutScreen extends StatelessWidget {
           ),
           SizedBox(width: 10),
         ],
-
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ...List.generate(2, (index){
+            ...List.generate(2, (index) {
               return Container(
                 width: double.infinity,
                 height: 112,
@@ -82,8 +82,7 @@ class CheckOutScreen extends StatelessWidget {
                       width: 107,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                            image: AssetImage("images/1.jpg"),
-
+                          image: AssetImage("images/1.jpg"),
                           fit: BoxFit.cover,
                         ),
                         shape: RoundedRectangleBorder(
@@ -91,7 +90,9 @@ class CheckOutScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,9 +103,11 @@ class CheckOutScreen extends StatelessWidget {
                               color: Color(0xFF1D1E20),
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
+                            ),
                           ),
+                          SizedBox(
+                            height: 5,
                           ),
-                          SizedBox(height: 5,),
                           Text(
                             'Decorations',
                             style: AppTextStyles.plusJakartaSans.copyWith(
@@ -127,7 +130,9 @@ class CheckOutScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Container(
                       width: 87,
                       height: 32,
@@ -171,9 +176,7 @@ class CheckOutScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(side: BorderSide(width: 1)),
                   ),
                   child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder()
-                    ),
+                    decoration: InputDecoration(border: OutlineInputBorder()),
                   ),
                 )
               ],
@@ -275,9 +278,9 @@ class CheckOutScreen extends StatelessWidget {
             SizedBox(height: 30),
             Center(
               child: GestureDetector(
-               onTap: (){
-                 navigateToPage(context: context, pageName: ProductPaymentScreen());
-               },
+                onTap: () {
+                  navigateToPage(context: context, pageName: Payment());
+                },
                 child: Container(
                   width: 292,
                   height: 49,
@@ -301,7 +304,10 @@ class CheckOutScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10),
-                        Icon(Icons.arrow_forward_sharp,color: Colors.white,)
+                        Icon(
+                          Icons.arrow_forward_sharp,
+                          color: Colors.white,
+                        )
                       ],
                     ),
                   ),

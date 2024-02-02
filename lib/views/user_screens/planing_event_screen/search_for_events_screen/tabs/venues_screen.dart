@@ -13,7 +13,6 @@ class VenueTabScreen extends StatefulWidget {
 }
 
 class _VenueTabScreenState extends State<VenueTabScreen> {
-
   PageController pageController = PageController();
 
   var dropDownValue;
@@ -25,10 +24,10 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
     "images/3.jpg",
   ];
   final List places = [
-    "Place 1",
-    "Place 2",
-    "Place 3",
-    "Place 4",
+    "Alexander City",
+    "Andalusia",
+    "Anniston",
+    "Athens",
   ];
   List<String> eventTypes = [
     "Wedding",
@@ -68,7 +67,6 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
     "Date & Time"
   ];
   @override
-
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -146,7 +144,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                               value: e,
                             );
                           }).toList(),
-                          hint: FittedBox(child: Text("Select Venues Category")),
+                          hint:
+                              FittedBox(child: Text("Select Venues Category")),
                           value: dropDownValue,
                           isExpanded: true,
                           onChanged: (v) {
@@ -330,7 +329,6 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                     child: Column(
                       children: [
                         SizedBox(height: 20),
-
                         Text(
                           'What are you planning',
                           textAlign: TextAlign.center,
@@ -349,7 +347,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(width: 1, color: Color(0xFF4A4E69)),
+                                    side: BorderSide(
+                                        width: 1, color: Color(0xFF4A4E69)),
                                   ),
                                 ),
                                 child: TextField(
@@ -357,9 +356,7 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                       contentPadding: EdgeInsets.only(left: 10),
                                       hintText: "Event Type",
                                       border: OutlineInputBorder(
-                                          borderSide: BorderSide.none
-                                      )
-                                  ),
+                                          borderSide: BorderSide.none)),
                                 ),
                               ),
                             ),
@@ -370,7 +367,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(width: 1, color: Color(0xFF4A4E69)),
+                                    side: BorderSide(
+                                        width: 1, color: Color(0xFF4A4E69)),
                                   ),
                                 ),
                                 child: TextField(
@@ -378,9 +376,7 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                       hintText: "Date",
                                       contentPadding: EdgeInsets.only(left: 10),
                                       border: OutlineInputBorder(
-                                          borderSide: BorderSide.none
-                                      )
-                                  ),
+                                          borderSide: BorderSide.none)),
                                 ),
                               ),
                             ),
@@ -395,7 +391,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(width: 1, color: Color(0xFF4A4E69)),
+                                    side: BorderSide(
+                                        width: 1, color: Color(0xFF4A4E69)),
                                   ),
                                 ),
                                 child: TextField(
@@ -403,9 +400,7 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                       contentPadding: EdgeInsets.only(left: 10),
                                       hintText: "Event Type",
                                       border: OutlineInputBorder(
-                                          borderSide: BorderSide.none
-                                      )
-                                  ),
+                                          borderSide: BorderSide.none)),
                                 ),
                               ),
                             ),
@@ -416,7 +411,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                 decoration: ShapeDecoration(
                                   color: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(width: 1, color: Color(0xFF4A4E69)),
+                                    side: BorderSide(
+                                        width: 1, color: Color(0xFF4A4E69)),
                                   ),
                                 ),
                                 child: TextField(
@@ -424,9 +420,7 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                                       hintText: "Date",
                                       contentPadding: EdgeInsets.only(left: 10),
                                       border: OutlineInputBorder(
-                                          borderSide: BorderSide.none
-                                      )
-                                  ),
+                                          borderSide: BorderSide.none)),
                                 ),
                               ),
                             ),
@@ -441,7 +435,8 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                     child: SizedBox(
                       width: 150,
                       height: 150,
-                      child: Image.asset("images/c61db17d32ddbc279742641316f15b7b.gif"),
+                      child: Image.asset(
+                          "images/c61db17d32ddbc279742641316f15b7b.gif"),
                     ),
                   ),
                 ],
@@ -502,7 +497,6 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                   ),
                 ),
               ),
-
               SizedBox(height: 30),
               Text(
                 'Find Your Perfect Venue',
@@ -536,8 +530,6 @@ class _VenueTabScreenState extends State<VenueTabScreen> {
                   ),
                 ),
               ),
-
-
               SizedBox(height: 30),
               Text(
                 'Manage Guests',

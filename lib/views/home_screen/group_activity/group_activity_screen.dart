@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:taptoparty/themes/app_colors.dart';
 import 'package:taptoparty/utils/navigation.dart';
-import 'package:taptoparty/views/group_activity/create_pol.dart';
-import 'package:taptoparty/views/group_activity/view_pol.dart';
-import 'package:taptoparty/views/group_activity/who_is_in.dart';
+import 'package:taptoparty/views/home_screen/group_activity/view_pol.dart';
+import 'package:taptoparty/views/home_screen/group_activity/who_is_in.dart';
 
 import '../../../../../themes/app_textstyles.dart';
 import 'cost_details_screen.dart';
+import 'create_pol.dart';
 import 'date_suggestion_screen.dart';
 import 'group_chat_screen.dart';
 import 'invite_friends_for_group.dart';
@@ -270,17 +270,25 @@ class GroupActivityScreen extends StatelessWidget {
                           child: Container(
                             height: 46,
                             width: double.infinity,
+                            padding: EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Text(
-                                'Invite Friends',
-                                style: AppTextStyles.gfsDidotStyle.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(),
+                                Text(
+                                  'Invite Friends',
+                                  style: AppTextStyles.gfsDidotStyle.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
+                                  ),
                                 ),
-                              ),
+                                SizedBox(
+                                  width: 40,
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -290,6 +298,7 @@ class GroupActivityScreen extends StatelessWidget {
                         Container(
                           height: 46,
                           width: double.infinity,
+                          padding: EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10)),
@@ -372,20 +381,15 @@ class GroupActivityScreen extends StatelessWidget {
                               );
                             },
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 70),
-                                  child: Text(
-                                    'Are You Joining ',
-                                    style: AppTextStyles.gfsDidotStyle.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
-                                    ),
+                                SizedBox(),
+                                Text(
+                                  'Are You Joining ',
+                                  style: AppTextStyles.gfsDidotStyle.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 15,
                                 ),
                                 Icon(
                                   Icons.keyboard_arrow_down,
@@ -409,27 +413,23 @@ class GroupActivityScreen extends StatelessWidget {
                           child: Container(
                             height: 46,
                             width: double.infinity,
+                            padding: EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10)),
                             child: GestureDetector(
                               onTap: () {},
                               child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 80),
-                                    child: Text(
-                                      'Decide a Date ',
-                                      style:
-                                          AppTextStyles.gfsDidotStyle.copyWith(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 18,
-                                      ),
+                                  SizedBox(),
+                                  Text(
+                                    'Decide a Date ',
+                                    style: AppTextStyles.gfsDidotStyle.copyWith(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
                                   ),
                                   Icon(
                                     Icons.keyboard_arrow_down,

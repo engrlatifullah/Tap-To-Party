@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/home_screen/shops_screen/reviews_screen.dart';
+import 'package:taptoparty/views/home_screen/shops_screen/wishlist_screen.dart';
 
-import '../../themes/app_textstyles.dart';
+import '../../../themes/app_textstyles.dart';
 import 'item_detail_screen.dart';
 
 class ItemsScreen extends StatelessWidget {
@@ -90,15 +92,24 @@ class ItemsScreen extends StatelessWidget {
                     children: [
                       Align(
                         alignment: Alignment.centerRight,
-                        child: Icon(
-                          Icons.favorite_border,
-                          color: Colors.red,
+                        child: GestureDetector(
+                          onTap: () {
+                            navigateToPage(
+                                context: context, pageName: WishListScreen());
+                          },
+                          child: Icon(
+                            Icons.favorite_border,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                       SizedBox(height: 5),
                       GestureDetector(
-                        onTap: (){
-                          navigateToPage(context: context, pageName: ItemDetailScreen(),);
+                        onTap: () {
+                          navigateToPage(
+                            context: context,
+                            pageName: ItemDetailScreen(),
+                          );
                         },
                         child: Container(
                           width: double.infinity,
@@ -156,23 +167,31 @@ class ItemsScreen extends StatelessWidget {
                             fontSize: 14, fontWeight: FontWeight.w600),
                       ),
                       SizedBox(height: 5),
-                      Row(
-                        children: [
-                          ...List.generate(4, (index) {
-                            return Icon(
-                              Icons.star,
-                              size: 15,
-                              color: Color(0xFFFFCB3C),
-                            );
-                          }),
-                          SizedBox(width: 10),
-                          Text(
-                            "32",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                            ),
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          navigateToPage(
+                            context: context,
+                            pageName: ReviewsScreen(),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            ...List.generate(4, (index) {
+                              return Icon(
+                                Icons.star,
+                                size: 15,
+                                color: Color(0xFFFFCB3C),
+                              );
+                            }),
+                            SizedBox(width: 10),
+                            Text(
+                              "32",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(height: 10),
                       Text(

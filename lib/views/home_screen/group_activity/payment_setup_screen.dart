@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/app_textstyles.dart';
+import '../../../themes/app_textstyles.dart';
 
 class PaymentSetupScreen extends StatelessWidget {
   const PaymentSetupScreen({super.key});
