@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:taptoparty/screens/new_screen/chats.dart';
 import 'package:taptoparty/utils/navigation.dart';
 
 import '../../../../../../themes/app_colors.dart';
@@ -87,12 +86,9 @@ class VendorMessagingWithClient extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: "Type your message here",
                     suffixIcon: Icon(Icons.mic),
-                    border: UnderlineInputBorder(
-                      borderSide: BorderSide.none
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide.none
-                    ),
+                    border: UnderlineInputBorder(borderSide: BorderSide.none),
+                    focusedBorder:
+                        UnderlineInputBorder(borderSide: BorderSide.none),
                   ),
                 ),
               ),
@@ -165,8 +161,9 @@ class VendorMessagingWithClient extends StatelessWidget {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: (){
-                        navigateToPage(context: context, pageName: ChatWithTeam());
+                      onTap: () {
+                        navigateToPage(
+                            context: context, pageName: ChatWithTeam());
                       },
                       child: Container(
                         height: 50,
@@ -202,9 +199,10 @@ class VendorMessagingWithClient extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
-                  return InkWell( 
-                    onTap: (){
-                      navigateToPage(context: context, pageName: ChatsWithClientScreen());
+                  return InkWell(
+                    onTap: () {
+                      navigateToPage(
+                          context: context, pageName: ChatsWithClientScreen());
                     },
                     child: Row(
                       children: [

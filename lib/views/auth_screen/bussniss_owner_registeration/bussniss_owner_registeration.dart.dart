@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:taptoparty/screens/vendor_dashboard/vendor_profile.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
+import 'package:taptoparty/views/home_screen/home_screen.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
 import '../../../widget/custom_input.dart';
@@ -181,8 +181,7 @@ class _BusinessOwnerRegistrationScreenState
                 PrimaryButton(
                     title: 'Submit',
                     onTap: () {
-                      navigateToPage(
-                          context: context, pageName: VendorProfile());
+                      navigateToPage(context: context, pageName: HomeScreen());
                     }),
                 SizedBox(
                   height: 20,

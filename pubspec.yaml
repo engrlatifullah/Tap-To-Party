@@ -45,6 +45,7 @@ dependencies:
   passcode_screen: ^2.0.1
   cart_stepper: ^4.3.0
   date_picker_timeline: ^1.2.5
+  country_picker: ^2.0.24
   getwidget: ^4.0.0
 
 dev_dependencies:
