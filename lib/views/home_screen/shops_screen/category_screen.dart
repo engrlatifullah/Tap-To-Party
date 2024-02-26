@@ -59,43 +59,127 @@ class _CategoryScreenState extends State<CategoryScreen> {
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(tabTitle.length, (index) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        currentIndex = index;
-                      });
-                    },
-                    child: Column(
-                      children: [
-                        Text(
-                          tabTitle[index],
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.gfsDidotStyle.copyWith(
-                            color: Colors.black,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Container(
-                          width: 96,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                width: 1,
-                                strokeAlign: BorderSide.strokeAlignCenter,
-                                color: currentIndex == index
-                                    ? Color(0xFFA99F96)
-                                    : Colors.transparent,
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentIndex = 0;
+                        });
+                      },
+                      child: Column(
+                        children: [
+                          FittedBox(
+                            child: Text(
+                              tabTitle[0],
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.gfsDidotStyle.copyWith(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
-                        )
-                      ],
+                          SizedBox(height: 5),
+                          Container(
+                            width: 96,
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignCenter,
+                                  color: currentIndex == 0
+                                      ? Color(0xFFA99F96)
+                                      : Colors.transparent,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  );
-                }),
+                  ),
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentIndex = 1;
+                        });
+                      },
+                      child: Column(
+                        children: [
+                          FittedBox(
+                            child: Text(
+                              tabTitle[1],
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.gfsDidotStyle.copyWith(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Container(
+                            width: 96,
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignCenter,
+                                  color: currentIndex == 1
+                                      ? Color(0xFFA99F96)
+                                      : Colors.transparent,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentIndex = 2;
+                        });
+                      },
+                      child: Column(
+                        children: [
+                          FittedBox(
+                            child: Text(
+                              tabTitle[2],
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.gfsDidotStyle.copyWith(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Container(
+                            width: 96,
+                            decoration: ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 1,
+                                  strokeAlign: BorderSide.strokeAlignCenter,
+                                  color: currentIndex == 2
+                                      ? Color(0xFFA99F96)
+                                      : Colors.transparent,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               Row(

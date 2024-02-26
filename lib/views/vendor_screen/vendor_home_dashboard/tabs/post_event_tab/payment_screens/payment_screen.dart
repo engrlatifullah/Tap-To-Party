@@ -66,6 +66,7 @@ class PaymentScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 34,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       decoration: ShapeDecoration(
                         color: Color(0xFF4A4E69),
                         shape: RoundedRectangleBorder(
@@ -89,6 +90,7 @@ class PaymentScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 34,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       decoration: ShapeDecoration(
                         color: Color(0x92F1F0EDED),
                         shape: RoundedRectangleBorder(
@@ -113,6 +115,7 @@ class PaymentScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 34,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       decoration: ShapeDecoration(
                         color: Color(0xFFA99F96),
                         shape: RoundedRectangleBorder(

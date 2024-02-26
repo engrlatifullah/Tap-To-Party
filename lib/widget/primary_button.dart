@@ -24,6 +24,7 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 45.h,
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         alignment: Alignment.center,
         width: double.infinity,
         decoration: BoxDecoration(

@@ -165,34 +165,36 @@ class SendInfoScreen extends StatelessWidget {
                       },
                     );
                   },
-                  child: Container(
-                    width: 166,
-                    height: 47,
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF4A4E69),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          width: 1,
-                          strokeAlign: BorderSide.strokeAlignOutside,
-                          color: Color(0xFFA99F96),
+                  child: IntrinsicWidth(
+                    child: Container(
+                      height: 47,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: ShapeDecoration(
+                        color: Color(0xFF4A4E69),
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 1,
+                            strokeAlign: BorderSide.strokeAlignOutside,
+                            color: Color(0xFFA99F96),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        borderRadius: BorderRadius.circular(10),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 4,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          )
+                        ],
                       ),
-                      shadows: [
-                        BoxShadow(
-                          color: Color(0x3F000000),
-                          blurRadius: 4,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Send Request',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
+                      child: Center(
+                        child: Text(
+                          'Send Request',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     ),

@@ -142,7 +142,9 @@ class _BusinessOwnerRegistrationScreenState
                               value: e,
                             );
                           }).toList(),
-                          hint: Text("Please Select Your Business Category"),
+                          hint: FittedBox(
+                              child:
+                                  Text("Please Select Your Business Category")),
                           value: dropDownValue,
                           isExpanded: true,
                           onChanged: (v) {

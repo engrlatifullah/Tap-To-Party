@@ -95,9 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    SizedBox(
-                      width: 161,
-                      height: 50,
+                    IntrinsicWidth(
                       child: PrimaryButton(
                         title: "Download App",
                         onTap: () {},
@@ -248,9 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           AppTextStyles.plusJakartaSans.copyWith(fontSize: 24),
                     ),
                     SizedBox(height: 20),
-                    SizedBox(
-                      height: 50,
-                      width: 165,
+                    IntrinsicWidth(
                       child: PrimaryButton(
                         title: "Download App",
                         onTap: () {},
@@ -303,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SvgPicture.asset("images/Relume.svg"),
                       SizedBox(height: 10),
                       Text(
-                        "Venue Search",
+                        "Vendor Search",
                         style: AppTextStyles.plusJakartaSans.copyWith(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -389,10 +385,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    SizedBox(
-                      height: 50,
-                      width: 135,
-                      child: PrimaryButton(title: "Download App", onTap: () {}),
+                    IntrinsicWidth(
+                      child: PrimaryButton(
+                        title: "Download App",
+                        onTap: () {},
+                      ),
                     ),
                     SizedBox(height: 50),
                     SizedBox(
@@ -519,9 +516,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    SizedBox(
-                      width: 130,
-                      height: 45,
+                    IntrinsicWidth(
                       child: PrimaryButton(
                         title: "Get Started",
                         onTap: () {},
@@ -1081,7 +1076,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       child: Text(
-                        "Placeholder",
+                        "Email",
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w400),
                       ),
@@ -1099,7 +1094,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: Center(
                           child: Text(
-                        "Button",
+                        "Signup",
                         style: TextStyle(color: Colors.white),
                       )),
                     ),

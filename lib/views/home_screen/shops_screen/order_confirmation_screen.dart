@@ -16,9 +16,14 @@ class OrderConfirmation extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Icon(Icons.arrow_back),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(Icons.arrow_back),
+              ),
             ),
             SizedBox(height: 20),
             Center(

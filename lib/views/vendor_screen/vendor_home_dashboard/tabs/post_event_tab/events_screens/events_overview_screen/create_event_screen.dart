@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
@@ -154,15 +155,28 @@ class CreateEventScreen extends StatelessWidget {
               SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerRight,
-                child: SizedBox(
-                  height: 40,
-                  width: 250,
-                  child: PrimaryButton(
-                    onTap: () {},
-                    title: "Save & Add to the Event List ",
+                child: GestureDetector(
+                  onTap: () {},
+                  child: IntrinsicWidth(
+                    child: Container(
+                      height: 45.h,
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      alignment: Alignment.center,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: AppColors.mainColor),
+                      child: Text(
+                        "Save & Add to the Event List ",
+                        style: AppTextStyles.plusJakartaSans.copyWith(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.sp,
+                            color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

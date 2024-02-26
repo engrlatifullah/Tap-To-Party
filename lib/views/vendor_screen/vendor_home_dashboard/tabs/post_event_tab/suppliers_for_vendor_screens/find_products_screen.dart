@@ -90,7 +90,7 @@ class FindProductScreen extends StatelessWidget {
               SizedBox(height: 10),
               Container(
                 width: double.infinity,
-                height: 42.07,
+                height: 50,
                 decoration: ShapeDecoration(
                   color: Color(0xEDF1F0ED),
                   shape: RoundedRectangleBorder(
@@ -100,9 +100,12 @@ class FindProductScreen extends StatelessWidget {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 10),
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(borderSide: BorderSide.none),
-                    focusedBorder: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                   ),
                 ),
               ),
@@ -144,14 +147,15 @@ class FindProductScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 6,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
                 ),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                    onTap: (){
-                      navigateToPage(context: context, pageName: ProductDescription());
+                    onTap: () {
+                      navigateToPage(
+                          context: context, pageName: ProductDescription());
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
