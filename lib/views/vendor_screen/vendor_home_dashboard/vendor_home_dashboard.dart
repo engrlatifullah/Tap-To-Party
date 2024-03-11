@@ -73,6 +73,30 @@ class _VendorHomeDashboardScreenState extends State<VendorHomeDashboardScreen> {
                   SizedBox(height: 20),
                   Image.asset("images/assa.gif"),
                   SizedBox(height: 20),
+                  Container(
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Color(0xFF4a4e69),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 20),
+                        Text(
+                          "Manage your Events",
+                          style: AppTextStyles.plusJakartaSans
+                              .copyWith(fontSize: 16, color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(tabTitle.length, (index) {

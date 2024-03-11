@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taptoparty/themes/app_textstyles.dart';
 import 'package:taptoparty/utils/navigation.dart';
-import 'package:taptoparty/views/home_screen/home_screen.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
 import '../../../widget/custom_input.dart';
+import '../../vendor_screen/vendor_home_dashboard/vendor_home_dashboard.dart';
 import '../login_screen.dart';
 
 class BusinessOwnerRegistrationScreen extends StatefulWidget {
@@ -183,7 +183,9 @@ class _BusinessOwnerRegistrationScreenState
                 PrimaryButton(
                     title: 'Submit',
                     onTap: () {
-                      navigateToPage(context: context, pageName: HomeScreen());
+                      navigateToPage(
+                          context: context,
+                          pageName: VendorHomeDashboardScreen());
                     }),
                 SizedBox(
                   height: 20,

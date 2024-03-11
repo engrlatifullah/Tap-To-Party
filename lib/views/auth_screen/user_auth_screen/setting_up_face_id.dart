@@ -85,7 +85,9 @@ class _SettingUpFaceIdState extends State<SettingUpFaceId> {
                 content: Column(
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Text(
                         'Try Face ID Again',
                         textAlign: TextAlign.center,
@@ -99,7 +101,9 @@ class _SettingUpFaceIdState extends State<SettingUpFaceId> {
                     ),
                     Divider(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Text(
                         'Cancel',
                         textAlign: TextAlign.center,

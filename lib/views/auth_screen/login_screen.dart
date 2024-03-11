@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taptoparty/views/auth_screen/bussniss_owner_registeration/bussniss_owner_registeration.dart.dart';
 import 'package:taptoparty/views/auth_screen/create_an_account.dart';
 import 'package:taptoparty/views/auth_screen/user_auth_screen/user_signup2.dart';
-import 'package:taptoparty/views/vendor_screen/vendor_home_dashboard/vendor_home_dashboard.dart';
+import 'package:taptoparty/views/user_screens/user_home_dashboard_screen.dart';
 import 'package:taptoparty/widget/primary_button.dart';
 
 import '../../themes/app_textstyles.dart';
@@ -43,9 +43,13 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 10.h),
               Row(
                 children: [
-                  Expanded(child: PrimaryButton(title: "User", onTap: () {
-                    navigateToPage(context: context, pageName: UserSignup2());
-                  })),
+                  Expanded(
+                      child: PrimaryButton(
+                          title: "User",
+                          onTap: () {
+                            navigateToPage(
+                                context: context, pageName: UserSignup2());
+                          })),
                   SizedBox(width: 20.w),
                   Expanded(
                       child: PrimaryButton(
@@ -91,8 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   title: "Login",
                   onTap: () {
                     navigateToPage(
-                        context: context,
-                        pageName: VendorHomeDashboardScreen());
+                        context: context, pageName: UserHomeDashboardScreen());
                   }),
               SizedBox(height: 20.h),
               Row(

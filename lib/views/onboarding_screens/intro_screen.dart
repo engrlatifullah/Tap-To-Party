@@ -55,8 +55,8 @@ class IntroScreen extends StatelessWidget {
                         },
                         child: Container(
                           height: 40.h,
-                          width: 150.w,
                           alignment: Alignment.center,
+                          padding: EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               color: AppColors.mainColor),
